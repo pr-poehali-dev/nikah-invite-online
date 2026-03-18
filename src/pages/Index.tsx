@@ -38,7 +38,7 @@ const Index = () => {
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
           <p className="font-cormorant text-2xl md:text-3xl italic text-slate-600 mb-6 font-light leading-relaxed text-center">
-            Кадерле Альберт абый хәм Венера апа!
+            Кадерле Альберт абый һәм Венера апа!
           </p>
 
           <div className="flex items-center gap-4 mb-10 w-full max-w-xs">
@@ -67,7 +67,7 @@ const Index = () => {
 
           <div className="inline-flex items-center gap-2 border border-blue-200 rounded-full px-6 py-2.5 text-blue-500 text-sm font-golos font-light tracking-wide">
             <Icon name="Calendar" size={14} />
-            <span>2025 нче ел, 15 июнь</span>
+            <span>2026 нче ел, 18 июль</span>
           </div>
         </div>
 
@@ -86,8 +86,8 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: "Calendar", label: "Сән", value: "15 июнь 2025", sub: "Шимбә" },
-              { icon: "Clock", label: "Сәгать", value: "14:00", sub: "UTC+3 · Мәскәү вакыты" },
+              { icon: "Calendar", label: "Сән", value: "18 июль 2026", sub: "Шимбә" },
+              { icon: "Clock", label: "Сәгать", value: "13:00", sub: "UTC+3 · Мәскәү вакыты" },
               { icon: "Sun", label: "Никах", value: "Икенде", sub: "Намаз вакытында" },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-blue-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm">
@@ -122,13 +122,13 @@ const Index = () => {
               {[
                 {
                   icon: "MapPin",
-                  title: "«Казан Сарае» банкет залы",
-                  desc: "Казан ш., Кремль ур., 5 нче йорт",
+                  title: "Әл-Мәрҗани мәчете",
+                  desc: "Казан ш., Каюм Насыйри ур., 17 нче йорт",
                 },
                 {
                   icon: "Info",
-                  title: "Залга керү",
-                  desc: "Баш керү ишегеннән. Иркен парковка бар. Метро: «Кремлевская».",
+                  title: "Мәчеткә керү",
+                  desc: "Баш керү ишегеннән. Иркен парковка бар.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
