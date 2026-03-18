@@ -10,10 +10,32 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: `url(${ORNAMENT_URL})`, backgroundSize: "600px", backgroundRepeat: "repeat" }}
-        />
+        {/* SVG ornament pattern hero */}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.12]">
+            <defs>
+              <pattern id="heroPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+                <polygon points="60,4 116,32 116,88 60,116 4,88 4,32" fill="none" stroke="#3b82f6" strokeWidth="1.2"/>
+                <polygon points="60,18 102,40 102,80 60,102 18,80 18,40" fill="none" stroke="#93c5fd" strokeWidth="0.7"/>
+                <circle cx="60" cy="60" r="16" fill="none" stroke="#3b82f6" strokeWidth="1"/>
+                <circle cx="60" cy="60" r="6" fill="none" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="60" y1="4" x2="60" y2="44" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <line x1="60" y1="76" x2="60" y2="116" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <line x1="4" y1="32" x2="44" y2="52" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <line x1="76" y1="68" x2="116" y2="88" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <line x1="116" y1="32" x2="76" y2="52" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <line x1="44" y1="68" x2="4" y2="88" stroke="#bfdbfe" strokeWidth="0.6"/>
+                <circle cx="60" cy="4" r="2" fill="#93c5fd"/>
+                <circle cx="116" cy="32" r="2" fill="#93c5fd"/>
+                <circle cx="116" cy="88" r="2" fill="#93c5fd"/>
+                <circle cx="60" cy="116" r="2" fill="#93c5fd"/>
+                <circle cx="4" cy="88" r="2" fill="#93c5fd"/>
+                <circle cx="4" cy="32" r="2" fill="#93c5fd"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroPattern)"/>
+          </svg>
+        </div>
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
@@ -31,11 +53,11 @@ const Index = () => {
             Никах тантанасына чакырабыз
           </p>
 
-          <h1 className="font-cormorant text-6xl md:text-8xl font-light text-slate-800 leading-tight mb-2">
+          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-slate-800 leading-tight mb-2 italic" style={{ letterSpacing: "-0.02em" }}>
             Рамазан
           </h1>
-          <div className="font-cormorant text-3xl text-blue-300 italic mb-2">&</div>
-          <h1 className="font-cormorant text-6xl md:text-8xl font-light text-slate-800 leading-tight mb-10">
+          <div className="font-cormorant text-3xl text-blue-400 italic mb-2">&</div>
+          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-slate-800 leading-tight mb-10 italic" style={{ letterSpacing: "-0.02em" }}>
             Эндже
           </h1>
 
@@ -85,9 +107,11 @@ const Index = () => {
 
       {/* Ornament divider */}
       <div className="flex items-center justify-center py-10 px-4">
-        <div className="h-px flex-1 max-w-32 bg-blue-100" />
-        <div className="mx-6 text-blue-200 text-2xl">✦</div>
-        <div className="h-px flex-1 max-w-32 bg-blue-100" />
+        <div className="h-px flex-1 max-w-32 bg-blue-300" />
+        <div className="mx-3 text-blue-300 text-sm">◆</div>
+        <div className="mx-1 text-blue-400 text-2xl">✦</div>
+        <div className="mx-3 text-blue-300 text-sm">◆</div>
+        <div className="h-px flex-1 max-w-32 bg-blue-300" />
       </div>
 
       {/* Location Section */}
@@ -150,26 +174,36 @@ const Index = () => {
 
       {/* Ornament divider */}
       <div className="flex items-center justify-center py-10 px-4">
-        <div className="h-px flex-1 max-w-32 bg-blue-100" />
-        <div className="mx-6 text-blue-200 text-2xl">✦</div>
-        <div className="h-px flex-1 max-w-32 bg-blue-100" />
+        <div className="h-px flex-1 max-w-32 bg-blue-300" />
+        <div className="mx-3 text-blue-300 text-sm">◆</div>
+        <div className="mx-1 text-blue-400 text-2xl">✦</div>
+        <div className="mx-3 text-blue-300 text-sm">◆</div>
+        <div className="h-px flex-1 max-w-32 bg-blue-300" />
       </div>
 
       {/* Message from newlyweds */}
       <section className="py-20 px-4 relative overflow-hidden">
         {/* Background geometric pattern */}
         <div className="absolute inset-0 pointer-events-none">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.035]">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.15]">
             <defs>
-              <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                <polygon points="40,2 78,22 78,58 40,78 2,58 2,22" fill="none" stroke="#3b82f6" strokeWidth="0.8"/>
-                <circle cx="40" cy="40" r="12" fill="none" stroke="#3b82f6" strokeWidth="0.6"/>
-                <line x1="40" y1="2" x2="40" y2="28" stroke="#3b82f6" strokeWidth="0.4"/>
-                <line x1="40" y1="52" x2="40" y2="78" stroke="#3b82f6" strokeWidth="0.4"/>
-                <line x1="2" y1="22" x2="28" y2="34" stroke="#3b82f6" strokeWidth="0.4"/>
-                <line x1="52" y1="46" x2="78" y2="58" stroke="#3b82f6" strokeWidth="0.4"/>
-                <line x1="78" y1="22" x2="52" y2="34" stroke="#3b82f6" strokeWidth="0.4"/>
-                <line x1="28" y1="46" x2="2" y2="58" stroke="#3b82f6" strokeWidth="0.4"/>
+              <pattern id="geo" x="0" y="0" width="90" height="90" patternUnits="userSpaceOnUse">
+                <polygon points="45,3 87,25 87,65 45,87 3,65 3,25" fill="none" stroke="#2563eb" strokeWidth="1.4"/>
+                <polygon points="45,14 76,30 76,60 45,76 14,60 14,30" fill="none" stroke="#93c5fd" strokeWidth="0.8"/>
+                <circle cx="45" cy="45" r="14" fill="none" stroke="#3b82f6" strokeWidth="1.1"/>
+                <circle cx="45" cy="45" r="5" fill="#bfdbfe"/>
+                <line x1="45" y1="3" x2="45" y2="31" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="45" y1="59" x2="45" y2="87" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="3" y1="25" x2="31" y2="38" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="59" y1="52" x2="87" y2="65" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="87" y1="25" x2="59" y2="38" stroke="#93c5fd" strokeWidth="0.8"/>
+                <line x1="31" y1="52" x2="3" y2="65" stroke="#93c5fd" strokeWidth="0.8"/>
+                <circle cx="45" cy="3" r="2.5" fill="#3b82f6"/>
+                <circle cx="87" cy="25" r="2.5" fill="#3b82f6"/>
+                <circle cx="87" cy="65" r="2.5" fill="#3b82f6"/>
+                <circle cx="45" cy="87" r="2.5" fill="#3b82f6"/>
+                <circle cx="3" cy="65" r="2.5" fill="#3b82f6"/>
+                <circle cx="3" cy="25" r="2.5" fill="#3b82f6"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#geo)"/>
