@@ -53,11 +53,11 @@ const Index = () => {
             Никах тантанасына чакырабыз
           </p>
 
-          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-slate-800 leading-tight mb-2 italic" style={{ letterSpacing: "-0.02em" }}>
+          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-blue-900 leading-tight mb-2 italic" style={{ letterSpacing: "-0.02em" }}>
             Рамазан
           </h1>
           <div className="font-cormorant text-3xl text-blue-400 italic mb-2">&</div>
-          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-slate-800 leading-tight mb-10 italic" style={{ letterSpacing: "-0.02em" }}>
+          <h1 className="font-cormorant text-7xl md:text-9xl font-light text-blue-900 leading-tight mb-10 italic" style={{ letterSpacing: "-0.02em" }}>
             Эндже
           </h1>
 
@@ -86,11 +86,10 @@ const Index = () => {
             <p className="text-xs tracking-[0.3em] uppercase text-blue-400 mb-3 font-light">Вакыт</p>
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-slate-700">Вакыт һәм Сәгать</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
             {[
               { icon: "Calendar", label: "Сән", value: "18 июль 2026", sub: "Шимбә" },
               { icon: "Clock", label: "Сәгать", value: "13:00", sub: "UTC+3 · Мәскәү вакыты" },
-              { icon: "Sun", label: "Никах", value: "Икенде", sub: "Намаз вакытында" },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-blue-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-4">
@@ -145,28 +144,18 @@ const Index = () => {
                   </div>
                 </div>
               ))}
-              <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Icon name="Navigation" size={14} className="text-blue-400" />
-                </div>
-                <div>
-                  <p className="font-light text-slate-700 mb-1">Маршрут</p>
-                  <button className="text-sm text-blue-400 font-light hover:text-blue-600 transition-colors underline underline-offset-4 decoration-blue-200">
-                    Яндекс Картада ачу →
-                  </button>
-                </div>
-              </div>
+
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden border border-blue-100 h-64 bg-blue-50 flex items-center justify-center shadow-sm">
-              <div className="text-center text-blue-300">
-                <Icon name="Map" size={40} />
-                <p className="text-sm mt-2 font-light">Карта бирелде</p>
+            <div className="relative rounded-2xl overflow-hidden border border-blue-100 h-72 shadow-sm">
+              <img
+                src="https://cdn.poehali.dev/projects/754132a4-9c44-4812-815f-99ec6d634bd0/bucket/73b79b48-efd3-441b-ae99-acc78be1220e.jpg"
+                alt="Әл-Мәрҗани мәчете"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/40 to-transparent px-4 py-3">
+                <p className="text-white text-xs font-light tracking-wide">Әл-Мәрҗани мәчете · Казан</p>
               </div>
-              <div className="absolute top-3 left-3 w-6 h-6 border-t border-l border-blue-200" />
-              <div className="absolute top-3 right-3 w-6 h-6 border-t border-r border-blue-200" />
-              <div className="absolute bottom-3 left-3 w-6 h-6 border-b border-l border-blue-200" />
-              <div className="absolute bottom-3 right-3 w-6 h-6 border-b border-r border-blue-200" />
             </div>
           </div>
         </div>
