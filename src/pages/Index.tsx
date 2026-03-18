@@ -1,29 +1,9 @@
-import { useState } from "react";
+
 import Icon from "@/components/ui/icon";
 
 const ORNAMENT_URL = "https://cdn.poehali.dev/projects/754132a4-9c44-4812-815f-99ec6d634bd0/files/a09a3712-8e9e-4daa-bfe7-5b8877589b35.jpg";
 
-const initialWishes = [
-  { name: "Гөлнара Х.", text: "Аллаh сезне бәхетле итсен! Мөбарәк булсын!" },
-  { name: "Рамил Ф.", text: "Гаиләгез нык, мәхәббәтегез мәңгелек булсын!" },
-];
-
 const Index = () => {
-  const [wishName, setWishName] = useState("");
-  const [wishText, setWishText] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [allWishes, setAllWishes] = useState(initialWishes);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (wishName.trim() && wishText.trim()) {
-      setAllWishes([...allWishes, { name: wishName, text: wishText }]);
-      setWishName("");
-      setWishText("");
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white font-golos text-slate-800">
@@ -175,68 +155,55 @@ const Index = () => {
         <div className="h-px flex-1 max-w-32 bg-blue-100" />
       </div>
 
-      {/* Wishes Section */}
-      <section className="py-16 px-4 bg-blue-50/40">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.3em] uppercase text-blue-400 mb-3 font-light">Теләкләр</p>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light text-slate-700">Котлаулар & Теләкләр</h2>
-          </div>
+      {/* Message from newlyweds */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        {/* Background geometric pattern */}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.035]">
+            <defs>
+              <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <polygon points="40,2 78,22 78,58 40,78 2,58 2,22" fill="none" stroke="#3b82f6" strokeWidth="0.8"/>
+                <circle cx="40" cy="40" r="12" fill="none" stroke="#3b82f6" strokeWidth="0.6"/>
+                <line x1="40" y1="2" x2="40" y2="28" stroke="#3b82f6" strokeWidth="0.4"/>
+                <line x1="40" y1="52" x2="40" y2="78" stroke="#3b82f6" strokeWidth="0.4"/>
+                <line x1="2" y1="22" x2="28" y2="34" stroke="#3b82f6" strokeWidth="0.4"/>
+                <line x1="52" y1="46" x2="78" y2="58" stroke="#3b82f6" strokeWidth="0.4"/>
+                <line x1="78" y1="22" x2="52" y2="34" stroke="#3b82f6" strokeWidth="0.4"/>
+                <line x1="28" y1="46" x2="2" y2="58" stroke="#3b82f6" strokeWidth="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#geo)"/>
+          </svg>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-            {allWishes.map((w, i) => (
-              <div key={i} className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
-                <div className="text-blue-200 font-cormorant text-3xl leading-none mb-3">"</div>
-                <p className="text-slate-600 font-light text-sm leading-relaxed mb-4">{w.text}</p>
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-px bg-blue-200" />
-                  <p className="text-xs text-blue-400 font-light">{w.name}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-2xl mx-auto relative z-10">
+          {/* Decorative frame */}
+          <div className="relative border border-blue-100 rounded-3xl p-10 md:p-14 bg-white/80 shadow-sm">
+            {/* Corner ornaments */}
+            <div className="absolute top-4 left-4 w-10 h-10 border-t-2 border-l-2 border-blue-200 rounded-tl-lg" />
+            <div className="absolute top-4 right-4 w-10 h-10 border-t-2 border-r-2 border-blue-200 rounded-tr-lg" />
+            <div className="absolute bottom-4 left-4 w-10 h-10 border-b-2 border-l-2 border-blue-200 rounded-bl-lg" />
+            <div className="absolute bottom-4 right-4 w-10 h-10 border-b-2 border-r-2 border-blue-200 rounded-br-lg" />
 
-          <div className="bg-white border border-blue-100 rounded-2xl p-8 shadow-sm">
-            <h3 className="font-cormorant text-2xl font-light text-slate-700 mb-6 text-center">
-              Үзегезнең теләкне калдырыгыз
-            </h3>
-            {submitted ? (
-              <div className="flex flex-col items-center gap-3 py-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center">
-                  <Icon name="Check" size={20} className="text-blue-400" />
-                </div>
-                <p className="text-slate-600 font-light">Теләгегез кабул ителде, рәхмәт!</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs tracking-widest uppercase text-blue-300 font-light block mb-2">Исемегез</label>
-                  <input
-                    type="text"
-                    value={wishName}
-                    onChange={(e) => setWishName(e.target.value)}
-                    placeholder="Исемегезне языгыз..."
-                    className="w-full border border-blue-100 rounded-xl px-4 py-3 text-sm text-slate-700 font-light placeholder:text-slate-300 focus:outline-none focus:border-blue-300 transition-colors bg-blue-50/30"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs tracking-widest uppercase text-blue-300 font-light block mb-2">Теләгегез</label>
-                  <textarea
-                    value={wishText}
-                    onChange={(e) => setWishText(e.target.value)}
-                    placeholder="Котлауларыгызны, теләкләрегезне языгыз..."
-                    rows={4}
-                    className="w-full border border-blue-100 rounded-xl px-4 py-3 text-sm text-slate-700 font-light placeholder:text-slate-300 focus:outline-none focus:border-blue-300 transition-colors bg-blue-50/30 resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-3 text-sm font-light tracking-wide transition-colors"
-                >
-                  Теләкне Җибәрү
-                </button>
-              </form>
-            )}
+            {/* Small diamonds on sides */}
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white border border-blue-200 rotate-45" />
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-white border border-blue-200 rotate-45" />
+
+            <p className="text-xs tracking-[0.3em] uppercase text-blue-400 mb-6 font-light text-center">
+              Яраткан кунакларыбызга
+            </p>
+
+            <div className="text-blue-200 font-cormorant text-5xl leading-none mb-4 text-center">❝</div>
+
+            <p className="font-cormorant text-2xl md:text-3xl text-slate-700 font-light leading-relaxed text-center italic">
+              Без бу мөһим көнне сезнең белән бүлешүебезгә бик шат булырбыз!
+            </p>
+
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <div className="h-px w-12 bg-blue-200" />
+              <span className="font-cormorant text-lg text-blue-400 font-light">Рамазан & Эндже</span>
+              <div className="h-px w-12 bg-blue-200" />
+            </div>
           </div>
         </div>
       </section>
@@ -248,13 +215,10 @@ const Index = () => {
           style={{ backgroundImage: `url(${ORNAMENT_URL})`, backgroundSize: "400px", backgroundRepeat: "repeat" }}
         />
         <div className="relative z-10">
-          <div className="text-2xl text-blue-300 mb-4 font-light" style={{ fontFamily: "serif", direction: "rtl" }}>
-            جزاكم الله خيراً
-          </div>
           <p className="font-cormorant text-xl italic text-slate-500 font-light mb-2">
             Сезне күрергә шатланачакбыз
           </p>
-          <p className="text-xs text-slate-300 font-light tracking-wider">Айгөл & Илнар · 2025</p>
+          <p className="text-xs text-slate-300 font-light tracking-wider">Рамазан & Эндже · 2026</p>
         </div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-100 to-transparent" />
       </footer>
