@@ -37,12 +37,9 @@ const Index = () => {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
-          <div
-            className="text-4xl md:text-5xl text-blue-400 mb-6 font-light leading-relaxed"
-            style={{ fontFamily: "serif", direction: "rtl" }}
-          >
-            بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-          </div>
+          <p className="font-cormorant text-2xl md:text-3xl italic text-slate-600 mb-6 font-light leading-relaxed text-center">
+            Кадерле Альберт абый хәм Венера апа!
+          </p>
 
           <div className="flex items-center gap-4 mb-10 w-full max-w-xs">
             <div className="h-px flex-1 bg-blue-200" />
@@ -55,11 +52,11 @@ const Index = () => {
           </p>
 
           <h1 className="font-cormorant text-6xl md:text-8xl font-light text-slate-800 leading-tight mb-2">
-            Айгөл
+            Рамазан
           </h1>
           <div className="font-cormorant text-3xl text-blue-300 italic mb-2">&</div>
           <h1 className="font-cormorant text-6xl md:text-8xl font-light text-slate-800 leading-tight mb-10">
-            Илнар
+            Эндже
           </h1>
 
           <div className="flex items-center gap-4 mb-10 w-full max-w-xs">
